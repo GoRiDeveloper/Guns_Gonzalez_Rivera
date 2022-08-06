@@ -1,0 +1,545 @@
+.header {
+
+    grid-area: header;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(73, 1, 1);
+    font-size: 1.6rem;
+    bottom: 0;
+
+}
+
+.header .header__nav {
+
+    width: 100%;
+    margin: .9rem 0 0;
+
+}
+
+.header__nav .nav__ul {
+
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.nav__ul .ul__list--resp {
+
+    cursor: pointer;
+
+}
+
+.list .list__a {
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.list .list__a .list__a--icon {
+
+    position: relative;
+    display: block;
+    line-height: 65px;
+    transition: .5s;
+    color: #fff;
+    z-index: 3;
+
+}
+
+
+.list.active .list__a .list__a--icon {
+   
+    transform: translateY(-40px);
+    color: #aa0000;
+    -webkit-text-stroke: .08rem rgb(141, 141, 141);
+
+}
+
+.list .list__a .list__a--text {
+
+    position: absolute;
+    background-color: #ff0000;
+    color: #fff;
+    padding: 2px 7px;
+    border: 1px solid rgb(141, 141, 141);
+    border-radius: 5px;
+    font-size: .8rem;
+    /*font-family: 'Big Shoulders Stencil Display', cursive;*/
+    letter-spacing: .05em;
+    transition: .5s;
+    opacity: 0;
+    transform: translateY(15px);
+    z-index: 3;
+
+}
+
+.list.active .list__a .list__a--text {
+
+    transform: translateY(-4px);
+    opacity: 1;
+
+}
+
+.indicator {
+
+    background-color: rgb(73, 1, 1);
+    position: absolute;
+    top: -35px;
+    left: 50px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    transition: .5s;
+    z-index: 1;
+
+}
+
+.indicator::before {
+
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: -28px;
+    width: 30px;
+    height: 30px;
+    height: 30px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 15px 18px rgb(73, 1, 1);
+
+}
+
+.indicator::after {
+
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 67px;
+    width: 30px;
+    height: 30px;
+    height: 30px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: -15px 18px rgb(73, 1, 1);
+
+}
+
+.list:nth-child(1).active ~ .indicator {
+
+    transform: translateX(-40px);
+
+}
+
+.list:nth-child(2).active ~ .indicator {
+
+    transform: translateX(47px);
+
+}
+
+.list:nth-child(3).active ~ .indicator {
+
+    transform: translateX(131px);
+
+}
+
+.li:nth-child(4).active ~ .indicator {
+
+    transform: translateX(213px);
+
+}
+
+.header__nav .nav__ul--desktop {
+
+    display: none;
+
+}
+
+.header__nav .nav__ul--desktop {
+
+    justify-content: center;
+
+}
+
+.nav__ul--desktop .list {
+
+    margin: .2rem;
+    padding: 1rem 1rem;
+
+}
+
+.nav__ul .ul__list--desk {
+
+    position: relative;
+    display: inline-flex;
+    overflow: hidden;
+
+}
+
+.nav__ul .list .list__span {
+
+    position: relative;
+    z-index: 1;
+
+}
+
+.ul__list--desk::before {
+
+    content: '';
+    position: absolute;
+    top: var(--y);
+    left: var(--x);
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    background: #aa0000;
+    border-radius: 50%;
+    transition: width .5s, height .5s;
+
+}
+
+.ul__list--desk:hover::before {
+
+    width: 7rem;
+    height: 7rem;
+
+}
+
+.nav__ul .ul__ul {
+
+    display: none;
+
+}
+
+.header__logo {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Black Ops One', cursive;
+    margin: 1.5rem 0 .5rem;
+    cursor: pointer;
+
+}
+
+.header__logo--i {
+
+    transition: .5s;
+
+}
+
+.header__cart:hover,
+.header__logo--i:hover {
+
+    color: #aa0000;
+    transition: all 300ms ease;
+    -webkit-text-stroke: .08rem rgb(141, 141, 141);
+
+}
+
+.header__logo--h1 {
+
+    position: relative;
+    color: rgb(73, 1, 1);
+    -webkit-text-stroke: .08rem rgb(141, 141, 141);
+
+}
+
+.header__logo--h1:hover::before {
+
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: #aa0000;
+    -webkit-text-stroke: 0;
+    border-right: 2px solid #ff0000;
+    overflow: hidden;
+    animation: title-anim 4s linear infinite;
+
+}
+
+@keyframes title-anim {
+
+    0%, 10%, 100% {
+
+        width: 0;
+
+    }
+
+    70%, 90% {
+
+        width: 100%;
+
+    }
+
+}
+
+@media screen and (min-width: 350px) {
+    
+    .list:nth-child(2).active ~ .indicator {
+
+        transform: translateX(55px);
+
+    }
+
+    .list:nth-child(3).active ~ .indicator {
+
+        transform: translateX(145px);
+
+    }
+
+    .list:nth-child(4).active ~ .indicator {
+
+        transform: translateX(230px);
+
+    }
+
+}
+
+@media screen and (min-width: 370px) {
+    
+    .list:nth-child(2).active ~ .indicator {
+
+        transform: translateX(65px);
+
+    }
+
+    .list:nth-child(4).active ~ .indicator {
+
+        transform: translateX(250px);
+
+    }
+
+}
+
+@media screen and (min-width: 400px) {
+    
+    .list:nth-child(1).active ~ .indicator {
+
+        transform: translateX(-28px);
+
+    }
+
+    .list:nth-child(2).active ~ .indicator {
+
+        transform: translateX(74px);
+
+    }
+
+    .list:nth-child(3).active ~ .indicator {
+
+        transform: translateX(170px);
+
+    }
+
+    .list:nth-child(4).active ~ .indicator {
+
+        transform: translateX(270px);
+
+    }
+
+}
+
+@media screen and (min-width: 420px) {
+    
+    .list:nth-child(4).active ~ .indicator {
+
+        transform: translateX(290px);
+
+    }
+
+}
+
+@media screen and (min-width: 440px) {
+    
+    .list:nth-child(2).active ~ .indicator {
+
+        transform: translateX(90px);
+
+    }
+
+    .list:nth-child(3).active ~ .indicator {
+
+        transform: translateX(210px);
+
+    }
+
+    .list:nth-child(4).active ~ .indicator {
+
+        transform: translateX(315px);
+
+    }
+
+}
+
+@media screen and (min-width: 480px) {
+    
+    .list .list__a .list__a--text {
+
+        font-size: 1.1rem;
+
+    }
+
+    .list:nth-child(2).active ~ .indicator {
+
+        transform: translateX(105px);
+
+    }
+
+    .list:nth-child(3).active ~ .indicator {
+
+        transform: translateX(220px);
+
+    }
+
+    .list:nth-child(4).active ~ .indicator {
+
+        transform: translateX(345px);
+
+    }
+
+}
+
+@media screen and (min-width: 517px) {
+
+    .list:nth-child(1).active ~ .indicator {
+
+        transform: translateX(-15px);
+
+    }
+
+    .list:nth-child(2).active ~ .indicator {
+
+        transform: translateX(120px);
+
+    }
+    
+    .list:nth-child(3).active ~ .indicator {
+
+        transform: translateX(250px);
+
+    }
+
+    .list:nth-child(4).active ~ .indicator {
+
+        transform: translateX(380px);
+
+    }
+
+}
+
+@media screen and (min-width: 527px) {
+    
+    .list:nth-child(1).active ~ .indicator {
+
+        transform: translateX(-8px);
+
+    }
+
+    .list:nth-child(2).active ~ .indicator {
+
+        transform: translateX(130px);
+
+    }
+
+    .list:nth-child(3).active ~ .indicator {
+
+        transform: translateX(260px);
+
+    }
+
+    .list:nth-child(4).active ~ .indicator {
+
+        transform: translateX(395px);
+
+    }
+
+}
+
+@media screen and (min-width: 550px) {
+
+    .header {
+
+        position: relative;
+        flex-direction: row-reverse;
+        justify-content: space-around;
+
+    }
+
+    .header .header__nav {
+
+        margin: 0;
+
+    }
+
+    .header__nav .nav__ul--resp {
+
+        display: none;
+
+    }
+
+    .header__nav .nav__ul--desktop {
+
+        display: flex;
+
+    }
+
+    .header__nav .nav__ul--desktop .ul__list--desk {
+
+        font-size: 1rem;
+        cursor: pointer;
+
+    }
+
+    .list--select:hover ~ .ul__ul,
+    .ul__ul:hover { 
+
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        top: 3.9rem;
+        background-color: rgb(73, 1, 1);
+        border: 2px solid rgb(141, 141, 141);
+        border-radius: 3px;
+        font-size: 1rem;
+        line-height: 2.5rem;
+        padding: 1rem;
+        z-index: 2;
+
+    }
+
+    .ul__ul .ul__ul--li:hover {
+
+        position: relative;
+        left: 0;
+        right: 0;
+        background: #aa0000;
+        cursor: pointer;
+
+    }
+
+    .header__logo {
+
+        
+        margin: .5rem 1rem .5rem;
+
+    }
+
+    .header__logo--i {
+
+        padding: 0 .5rem;
+
+    }
+
+}

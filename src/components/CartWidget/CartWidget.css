@@ -1,0 +1,19 @@
+.header__cart {
+
+    display: none;
+
+}
+
+@media screen and (min-width: 550px) {
+
+    .header__cart {
+
+        display: inline; 
+        color: #fff;
+        padding: 0 1rem 0 0;
+        transition: .5s;
+        cursor: pointer;
+
+    }
+    
+}
