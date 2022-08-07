@@ -146,6 +146,7 @@ svg {
 body {
 
   position: relative;
+  padding-bottom: 6rem;
   margin: 0;
   background-color: #750101e7;
   min-height: 100vh;

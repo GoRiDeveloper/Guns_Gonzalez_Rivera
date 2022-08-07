@@ -2,7 +2,7 @@
   
   display: grid;
   height: 100vh;
-  grid: 1fr 1fr .1fr / 1fr;
+  grid: 1fr .1fr .1fr / 1fr;
   grid-template-areas: 
   "content-0"
   "footer"
@@ -14,7 +14,7 @@
   
   .App {
 
-    grid: .1fr 1fr 1fr / 1fr;
+    grid: .1fr 1fr .1fr / 1fr;
     grid-template-areas: 
     "header"
     "content-0"

@@ -1,8 +1,10 @@
 import React from 'react';
-import { CartWidget, CartWidgetResp } from '../CartWidget/CartWidget';
+import { CartWidget, CartWidgetResp } from './CartWidget/CartWidget';
 import './NavBar.css';
 
 export const NavBar = () => {
+
+    const subNavBarMenuItems = ["Pistolas", "Subfusiles", "Fusiles", "Protección"];
 
     return (
         
@@ -73,15 +75,6 @@ export const NavBar = () => {
 
                     </li>
 
-                    <ul className="ul__ul">
-
-                        <li className="ul__ul--li"> Pistolas </li>
-                        <li className="ul__ul--li"> Subfusiles </li>
-                        <li className="ul__ul--li"> Fusiles </li>
-                        <li className="ul__ul--li"> Protección </li>
-
-                    </ul>
-
                     <li className="ul__list--desk list">
                         <span className="list__span"> Nosotros </span>
                     </li>
@@ -89,6 +82,18 @@ export const NavBar = () => {
                     <li className="ul__list--desk list">
                         <span className="list__span"> Ingresa </span>
                     </li>
+
+                    <ul className="ul__ul">{
+
+                        subNavBarMenuItems.map((item) => (
+
+                            <li className="ul__ul--li"> {item} </li>                          
+
+                        ))
+
+                        }
+
+                    </ul>
 
                 </ul>
 
@@ -114,7 +119,8 @@ const d = document,
 function activeLink() {
 
     listResp.forEach((item) => 
-    item.classList.remove("active"));
+    item.classList.remove("active"))
+
     this.classList.add("active")
 
 }
