@@ -8,32 +8,33 @@
     justify-content: space-between;
     align-items: center;
     background-color: rgb(73, 1, 1);
+    box-shadow: 5px 0 10px rgb(59, 1, 1);
     font-size: 1.6rem;
     bottom: 0;
 
 }
 
-.header .header__nav {
+.header__nav {
 
     width: 100%;
     margin: .9rem 0 0;
 
 }
 
-.header__nav .nav__ul {
+.nav__ul {
 
     display: flex;
     justify-content: space-around;
 
 }
 
-.nav__ul .ul__list--resp {
+.ul__list--resp {
 
     cursor: pointer;
 
 }
 
-.list .list__a {
+.list__a {
 
     position: relative;
     display: flex;
@@ -43,7 +44,7 @@
 
 }
 
-.list .list__a .list__a--icon {
+.list__a--icon {
 
     position: relative;
     display: block;
@@ -54,7 +55,6 @@
 
 }
 
-
 .list.active .list__a .list__a--icon {
    
     transform: translateY(-40px);
@@ -63,7 +63,7 @@
 
 }
 
-.list .list__a .list__a--text {
+.list__a--text {
 
     position: absolute;
     background-color: #ff0000;
@@ -91,6 +91,7 @@
 .indicator {
 
     background-color: rgb(73, 1, 1);
+    box-shadow: 0 0 10px rgb(59, 1, 1);
     position: absolute;
     top: -35px;
     left: 50px;
@@ -156,34 +157,24 @@
 
 }
 
-.header__nav .nav__ul--desktop {
+.nav__ul--desktop {
 
     display: none;
-
-}
-
-.header__nav .nav__ul--desktop {
-
     justify-content: center;
 
 }
 
-.nav__ul--desktop .list {
+.list--desk {
 
+    position: relative;
+    display: inline-flex;
+    overflow: hidden;
     margin: .2rem;
     padding: 1rem 1rem;
 
 }
 
-.nav__ul .ul__list--desk {
-
-    position: relative;
-    display: inline-flex;
-    overflow: hidden;
-
-}
-
-.nav__ul .list .list__span {
+.list__span--desk {
 
     position: relative;
     z-index: 1;
@@ -212,7 +203,7 @@
 
 }
 
-.nav__ul .ul__ul {
+.ul__ul--desk {
 
     display: none;
 
@@ -384,7 +375,7 @@
 
 @media screen and (min-width: 480px) {
     
-    .list .list__a .list__a--text {
+    .list__a--text {
 
         font-size: 1.1rem;
 
@@ -432,7 +423,7 @@
 
     .list:nth-child(4).active ~ .indicator {
 
-        transform: translateX(380px);
+        transform: translateX(370px);
 
     }
 
@@ -460,7 +451,7 @@
 
     .list:nth-child(4).active ~ .indicator {
 
-        transform: translateX(395px);
+        transform: translateX(380px);
 
     }
 
@@ -476,33 +467,33 @@
 
     }
 
-    .header .header__nav {
+    .header__nav {
 
         margin: 0;
 
     }
 
-    .header__nav .nav__ul--resp {
+    .nav__ul--resp {
 
         display: none;
 
     }
 
-    .header__nav .nav__ul--desktop {
+    .nav__ul--desktop {
 
         display: flex;
 
     }
 
-    .header__nav .nav__ul--desktop .ul__list--desk {
+    .ul__list--desk {
 
         font-size: 1rem;
         cursor: pointer;
 
     }
 
-    .list--select:hover ~ .ul__ul,
-    .ul__ul:hover { 
+    .list--desk--select:hover ~ .ul__ul--desk,
+    .ul__ul--desk:hover { 
 
         position: absolute;
         display: flex;
@@ -523,7 +514,7 @@
 
     }
 
-    .ul__ul .ul__ul--li:hover {
+    .ul__ul--li--desk:hover {
 
         width: 145%;
         left: 0;

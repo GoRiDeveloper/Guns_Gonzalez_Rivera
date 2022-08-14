@@ -8,7 +8,7 @@ export function App() {
     <div className="App">
 
       <NavBar />
-      <ItemListContainer greeting="Gracias por Visitar esta Web" />
+      <ItemListContainer />
 
     </div>
   );

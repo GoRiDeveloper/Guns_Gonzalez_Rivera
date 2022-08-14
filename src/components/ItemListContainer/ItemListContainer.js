@@ -1,15 +1,16 @@
 import React from 'react';
+import { ItemCount } from './ItemCount/ItemCount';
 import './ItemListContainer.css';
 
-export const ItemListContainer = (props) => {
+export const ItemListContainer = () => {
 
     return (
         
-        <div className="container__greeting">
+        <main className='main'>
 
-            <h2 className="greeting">{props.greeting}</h2>
+            <ItemCount stock={5} initial={1}/>
 
-        </div>
+        </main>
 
     );
 

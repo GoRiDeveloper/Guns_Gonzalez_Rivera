@@ -1,10 +1,53 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { CartWidget, CartWidgetResp } from './CartWidget/CartWidget';
 import './NavBar.css';
 
 export const NavBar = () => {
 
-    const subNavBarMenuItems = ["Pistolas", "Subfusiles", "Fusiles", "Protección"];
+    const subNavBarMenuItems = ["Pistolas", "Subfusiles", "Fusiles", "Protección"],
+                           d = document;
+                    
+    useEffect(() => {
+
+        const listResp = d.querySelectorAll(".ul__list--resp"),
+              listDesk = d.querySelectorAll(".ul__list--desk");
+
+        listResp.forEach(item => 
+    
+            item.addEventListener("click", activeLink)
+        
+        );
+
+        listDesk.forEach(item =>
+
+            item.addEventListener("mousemove", mouseMoveA)
+            
+        );
+
+        function activeLink() {
+
+            listResp.forEach((item) => 
+            item.classList.remove("active"))
+        
+            this.classList.add("active")
+        
+        }
+
+        function mouseMoveA (e) {
+
+            listDesk.forEach((item) => {
+        
+                const x = e.pageX - item.offsetLeft;
+                const y = e.pageY - item.offsetTop;
+        
+                item.style.setProperty('--x', x + 'px');
+                item.style.setProperty('--y', y + 'px');
+        
+            })
+        
+        }
+
+    }, []);
 
     return (
         
@@ -69,25 +112,29 @@ export const NavBar = () => {
 
                 <ul className="nav__ul nav__ul--desktop">
 
-                    <li className="ul__list--desk list list--select">
+                    <li className="ul__list--desk list--desk list--desk--select">
 
-                        <span className="list__span"> Categorias ▾ </span>
+                        <span className="list__span--desk"> Categorias ▾ </span>
 
                     </li>
 
-                    <li className="ul__list--desk list">
-                        <span className="list__span"> Nosotros </span>
+                    <li className="ul__list--desk list--desk">
+
+                        <span className="list__span--desk"> Nosotros </span>
+
                     </li>
 
-                    <li className="ul__list--desk list">
-                        <span className="list__span"> Ingresa </span>
+                    <li className="ul__list--desk list--desk">
+
+                        <span className="list__span--desk"> Ingresa </span>
+                        
                     </li>
 
-                    <ul className="ul__ul">{
+                    <ul className="ul__ul--desk">{
 
-                        subNavBarMenuItems.map((item) => (
+                        subNavBarMenuItems.map((item, index) => (
 
-                            <li className="ul__ul--li"> {item} </li>                          
+                            <li key={index} className="ul__ul--li--desk"> {item} </li>                          
 
                         ))
 
@@ -111,42 +158,3 @@ export const NavBar = () => {
     );
 
 }
-
-const d = document,
-   listResp = d.querySelectorAll(".ul__list--resp"),
-   listDesk = d.querySelectorAll(".ul__list--desk");
-
-function activeLink() {
-
-    listResp.forEach((item) => 
-    item.classList.remove("active"))
-
-    this.classList.add("active")
-
-}
-
-function mouseMoveA (e) {
-
-    listDesk.forEach((item) => {
-
-        const x = e.pageX - item.offsetLeft;
-        const y = e.pageY - item.offsetTop;
-
-        item.style.setProperty('--x', x + 'px');
-        item.style.setProperty('--y', y + 'px');
-
-    })
-
-}
-
-listResp.forEach(item => 
-    
-    item.addEventListener("click", activeLink)
-
-);
-
-listDesk.forEach(item =>
-
-    item.addEventListener("mousemove", mouseMoveA)
-    
-);

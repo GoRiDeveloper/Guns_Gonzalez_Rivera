@@ -12,6 +12,12 @@
 
 @media screen and (min-width: 550px) {
   
+  body {
+  
+    padding-bottom: 0;
+  
+  }
+  
   .App {
 
     grid: .1fr 1fr .1fr / 1fr;
