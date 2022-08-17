@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow&display=swap');
 /*
   Con este reset vamos a resolver:
     👉 Unificar el uso de Custom Properties
@@ -14,7 +14,8 @@
   --negro: #393939;
   /* Tipografía */
   --tipo-principal: Helvetica, Arial, sans-serif;
-  --tipo-secundaria: Verdana;
+  --tipo-secundaria: 'Archivo Narrow', sans-serif;
+  --tipo-title: 'Black Ops One', cursive;
 }
 
 /* Las adaptamos al modo oscuro */
@@ -80,6 +81,8 @@ li {
 /* Configuramos anclas suaves */
 html {
   scroll-behavior: smooth;
+  /*display: flex;
+  justify-content: center;*/
 }
 
 /* Desactivamos estilos por defecto de las principales etiquetas de texto */
@@ -146,7 +149,6 @@ svg {
 body {
 
   position: relative;
-  padding-bottom: 6rem;
   margin: 0;
   background-color: #750101e7;
   min-height: 100vh;

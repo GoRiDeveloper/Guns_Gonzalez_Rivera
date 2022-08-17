@@ -4,7 +4,7 @@ import './NavBar.css';
 
 export const NavBar = () => {
 
-    const subNavBarMenuItems = ["Pistolas", "Subfusiles", "Fusiles", "Protección"],
+    const subNavBarMenuItems = ["Accesorios", "Arma Corta", "Arma Larga", "Municiones"],
                            d = document;
                     
     useEffect(() => {
