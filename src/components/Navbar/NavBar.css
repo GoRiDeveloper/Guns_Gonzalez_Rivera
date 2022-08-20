@@ -8,9 +8,10 @@
     justify-content: space-between;
     align-items: center;
     background-color: rgb(73, 1, 1);
-    box-shadow: 5px 0 10px rgb(59, 1, 1);
+    box-shadow: 0px 0 15px rgb(59, 1, 1);
     font-size: 1.6rem;
     bottom: 0;
+    z-index: 20;
 
 }
 
@@ -25,6 +26,7 @@
 
     display: flex;
     justify-content: space-around;
+    font-family: var(--tipo-secundaria);
 
 }
 
@@ -72,7 +74,6 @@
     border: 1px solid rgb(141, 141, 141);
     border-radius: 5px;
     font-size: .8rem;
-    /*font-family: 'Big Shoulders Stencil Display', cursive;*/
     letter-spacing: .05em;
     transition: .5s;
     opacity: 0;
@@ -227,7 +228,8 @@
 }
 
 .header__cart:hover,
-.header__logo--i:hover {
+.header__logo--i:hover,
+.controls__button:hover {
 
     color: #aa0000;
     transition: all 300ms ease;
@@ -487,7 +489,7 @@
 
     .ul__list--desk {
 
-        font-size: 1rem;
+        font-size: 1.3rem;
         cursor: pointer;
 
     }
@@ -504,7 +506,7 @@
         background-color: rgb(73, 1, 1);
         border: 2px solid rgb(141, 141, 141);
         border-radius: 3px;
-        font-size: 1rem;
+        font-size: 1.3rem;
         line-height: 2.5rem;
         transition: .5s;
         margin-left: -113px;
@@ -536,6 +538,30 @@
     .header__logo--i {
 
         padding: 0 .5rem;
+
+    }
+
+}
+
+@media screen and (min-width: 1500px) {
+    
+    .header {
+
+        font-size: 2.5rem;
+
+    }
+
+    .ul__list--desk{
+
+        font-size: 2.5rem;
+
+    }
+
+    .list--desk--select:hover ~ .ul__ul--desk,
+    .ul__ul--desk:hover {
+
+        font-size: 2.5rem;
+        line-height: 4rem;
 
     }
 

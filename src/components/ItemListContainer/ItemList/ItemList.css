@@ -1,0 +1,29 @@
+.secItemList {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+
+}
+
+.secItemList__title {
+
+    font-size: 2.8rem;
+    font-family: var(--tipo-title);
+    text-align: center;
+    margin: 2.5rem 0;
+
+}
+
+.secItemList__products {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+    margin: 0 .7rem;
+
+}
