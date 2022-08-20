@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import './Slideshow.css';
 
 export const Slideshow = ({ children }) => {
@@ -56,6 +56,32 @@ export const Slideshow = ({ children }) => {
         }
     
     };
+
+    useEffect(() => {
+
+        intervalSlideshow.current = setInterval(() => {
+
+            next();
+
+        }, 5000);
+
+        slideshow.current.addEventListener("mouseenter", () => {
+
+            clearInterval(intervalSlideshow.current);
+
+        });
+
+        slideshow.current.addEventListener("mouseleave", () => {
+
+            intervalSlideshow.current = setInterval(() => {
+
+                next();
+
+            }, 5000);
+
+        });
+
+    }, []);
 
     return (
 

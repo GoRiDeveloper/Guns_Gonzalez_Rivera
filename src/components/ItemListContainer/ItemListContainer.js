@@ -2,6 +2,7 @@ import React, { useState, useEffect} from 'react';
 import { Slideshow } from './Slideshow/Slideshow';
 import { ItemList } from './ItemList/ItemList';
 import { Item } from './ItemList/Item/Item';
+import { Loader } from './Loader/Loader';
 import Img1 from '../../images/Fondo-Accesorio-Glock.png';
 import Img2 from '../../images/Fondo-Glock.png';
 import Img3 from '../../images/Fondo-Rifle.png';
@@ -24,8 +25,6 @@ export const ItemListContainer = () => {
 
     ];
 
-    console.log(data);
-
     useEffect(() => {
 
         const task = new Promise((resolve, rejected) => {
@@ -34,7 +33,7 @@ export const ItemListContainer = () => {
 
                 resolve(data);
 
-            }, 4000);
+            }, 2000);
 
         });
 
@@ -130,7 +129,7 @@ export const ItemListContainer = () => {
                 <div className="secItemList__products">
 
                     {prod.length < 1 
-                        ? (<h4> Cargando... </h4>)
+                        ? (<Loader />)
                         : (prod.map((item, index) => <Item key={item.id} item={item}/>)
                     )}
 

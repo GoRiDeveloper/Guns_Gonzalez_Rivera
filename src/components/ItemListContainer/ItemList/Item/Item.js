@@ -2,9 +2,7 @@ import React from 'react';
 import './Item.css';
 
 export const Item = ({ item }) => {
-
-    console.log(item)
-
+console.log(item);
     return (
 
         <div className="card">
