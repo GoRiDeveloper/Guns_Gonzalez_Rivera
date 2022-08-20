@@ -8,7 +8,7 @@ export const ItemListContainer = () => {
         
         <main className='main'>
 
-            <ItemCount stock={5} initial={1}/>
+            
 
         </main>
 
