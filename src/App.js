@@ -1,14 +1,12 @@
 import React from 'react'; 
 import './App.css';
-import { NavBar } from './components/Navbar/NavBar';
-import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
+import { Index } from './routes/index';
 
 export function App() {
   return (
     <div className="App">
 
-      <NavBar />
-      <ItemListContainer />
+      <Index />
 
     </div>
   );

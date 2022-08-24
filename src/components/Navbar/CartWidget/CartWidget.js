@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import '../NavBar.css'
 import './CartWidget.css';
 
@@ -6,11 +7,11 @@ export const CartWidget = () => {
 
     return (
 
-        <div className="header__cart">
+        <NavLink to={'/cart'} className="header__cart">
 
             <i className="fa-solid fa-cart-shopping"></i>
 
-        </div>
+        </NavLink>
 
     );
 
@@ -22,7 +23,7 @@ export const CartWidgetResp = () => {
 
         <li className="ul__list--resp list">
 
-            <a className="list__a" href="#">
+            <NavLink to={'/cart'} className="list__a">
 
                 <span className="list__a--icon">
 
@@ -31,7 +32,7 @@ export const CartWidgetResp = () => {
                 </span>
                 <span className="list__a--text"> Carrito </span>
 
-            </a>
+            </NavLink>
 
         </li>
 

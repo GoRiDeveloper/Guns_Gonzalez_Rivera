@@ -5,8 +5,6 @@ export const ItemCount = ({ stock, initial }) => {
 
     const [counter, setCounter] = useState(initial);
 
-    console.log(counter)
-
     return (
 
         <div className="container">

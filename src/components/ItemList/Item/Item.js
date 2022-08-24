@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Item.css';
 
-export const Item = ({ item }) => {
-console.log(item);
+export const Item = ({ item, index }) => {
+
     return (
 
         <div className="card">
@@ -17,7 +18,7 @@ console.log(item);
 
                 <h4 className="card__content--name">{item.name}</h4>
                 <h5 className="card__content--price">{`$${item.price}`}</h5>
-                <button className="card__content--button"> Comprar </button>
+                <Link to={`/product/${index}`} className="card__content--button"> Comprar </Link>
 
             </div>
             

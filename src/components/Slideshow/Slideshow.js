@@ -1,37 +1,41 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useCallback, useRef } from 'react';
 import './Slideshow.css';
 
 export const Slideshow = ({ children }) => {
-
+ 
     const slideshow = useRef(null),
   intervalSlideshow = useRef(null);
- 
-    const next = () => { 
 
-        if (slideshow.current.children.length > 0) {
+    const next = () => {
 
-            const firstElement = slideshow.current.children[0],
-                     sizeSlide = slideshow.current.children[0].offsetWidth;
+        if (slideshow.current !== null) {
 
-            slideshow.current.style.transition = `300ms ease-out all`;
-            slideshow.current.style.transform = `translateX(-${sizeSlide}px)`;
+            if (slideshow.current.children.length > 0) {
 
-            const transition = () => { 
+                const firstElement = slideshow.current.children[0],
+                        sizeSlide = slideshow.current.children[0].offsetWidth;
 
-                slideshow.current.style.transition = 'none';
-                slideshow.current.style.transform = 'translateX(0)';
+                slideshow.current.style.transition = `300ms ease-out all`;
+                slideshow.current.style.transform = `translateX(-${sizeSlide}px)`;
 
-                slideshow.current.appendChild(firstElement);
-                
-                slideshow.current.removeEventListener("transitionend", transition);
+                const transition = () => { 
 
-            }
+                    slideshow.current.style.transition = 'none';
+                    slideshow.current.style.transform = 'translateX(0)';
 
-            slideshow.current.addEventListener("transitionend", transition);
+                    slideshow.current.appendChild(firstElement);
+                    
+                    slideshow.current.removeEventListener("transitionend", transition);
 
-        }
+                };
 
-    };
+                slideshow.current.addEventListener("transitionend", transition);
+
+            }; 
+    
+        };
+
+    }; 
     
     const prev = () => {
         
@@ -59,19 +63,7 @@ export const Slideshow = ({ children }) => {
 
     useEffect(() => {
 
-        intervalSlideshow.current = setInterval(() => {
-
-            next();
-
-        }, 5000);
-
-        slideshow.current.addEventListener("mouseenter", () => {
-
-            clearInterval(intervalSlideshow.current);
-
-        });
-
-        slideshow.current.addEventListener("mouseleave", () => {
+        if (slideshow.current !== null) { 
 
             intervalSlideshow.current = setInterval(() => {
 
@@ -79,7 +71,23 @@ export const Slideshow = ({ children }) => {
 
             }, 5000);
 
-        });
+            slideshow.current.addEventListener("mouseenter", () => {
+
+                clearInterval(intervalSlideshow.current);
+
+            });
+
+            slideshow.current.addEventListener("mouseleave", () => {
+
+                intervalSlideshow.current = setInterval(() => {
+
+                    next();
+
+                }, 5000);
+
+            });
+
+        };
 
     }, []);
 
@@ -113,4 +121,4 @@ export const Slideshow = ({ children }) => {
 
     );
 
-}
+};

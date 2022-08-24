@@ -1,0 +1,55 @@
+.i--logo {
+
+    transition: .5s;
+
+}
+
+.h1--logo {
+
+    position: relative;
+    color: rgb(73, 1, 1);
+    -webkit-text-stroke: .08rem rgb(141, 141, 141);
+
+}
+
+.h1--logo:hover::before {
+
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: #aa0000;
+    -webkit-text-stroke: 0;
+    border-right: 2px solid #ff0000;
+    overflow: hidden;
+    animation: title-anim 4s linear infinite;
+
+}
+
+@keyframes title-anim {
+
+    0%, 10%, 100% {
+
+        width: 0;
+
+    }
+
+    70%, 90% {
+
+        width: 100%;
+
+    }
+
+}
+
+@media screen and (min-width: 550px) {
+
+    .i--logo {
+
+        padding: 0 .5rem;
+
+    }
+
+}

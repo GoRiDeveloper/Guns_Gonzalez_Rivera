@@ -1,13 +1,12 @@
-.main {
+.main__home {
 
     grid-area: content-0;
-    padding-bottom: 14rem;
 
 }
 
 @media screen and (min-width: 550px) {
     
-    .main {
+    .main__home {
 
         padding-bottom: 0;
 

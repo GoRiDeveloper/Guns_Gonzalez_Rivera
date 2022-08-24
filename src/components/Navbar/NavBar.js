@@ -1,5 +1,7 @@
 import React, {useEffect} from 'react';
+import { NavLink } from 'react-router-dom';
 import { CartWidget, CartWidgetResp } from './CartWidget/CartWidget';
+import { LogoGR } from '../LogoGR/LogoGR';
 import './NavBar.css';
 
 export const NavBar = () => {
@@ -61,7 +63,7 @@ export const NavBar = () => {
 
                     <li className="ul__list--resp list active">
 
-                        <a className="list__a" href="#">
+                        <NavLink to={'/categories'} className="list__a">
 
                             <span className="list__a--icon">
 
@@ -70,13 +72,13 @@ export const NavBar = () => {
                             </span>
                             <span className="list__a--text"> Categorias </span>
 
-                        </a>
+                        </NavLink>
 
                     </li>
 
                     <li className="ul__list--resp list">
 
-                        <a className="list__a" href="#">
+                        <NavLink to={'/us'} className="list__a">
 
                             <span className="list__a--icon">
 
@@ -85,13 +87,13 @@ export const NavBar = () => {
                             </span>
                             <span className="list__a--text"> Nosotros </span>
 
-                        </a>
+                        </NavLink>
 
                     </li>
 
                     <li className="ul__list--resp list">
 
-                        <a className="list__a" href="#">
+                        <NavLink to={'/sign'} className="list__a">
 
                             <span className="list__a--icon">
 
@@ -100,7 +102,7 @@ export const NavBar = () => {
                             </span>
                             <span className="list__a--text"> Ingresa </span>
                             
-                        </a>
+                        </NavLink>
 
                     </li>
 
@@ -114,19 +116,19 @@ export const NavBar = () => {
 
                     <li className="ul__list--desk list--desk list--desk--select">
 
-                        <span className="list__span--desk"> Categorias ▾ </span>
+                        <NavLink to={'/categories'} className="list__span--desk"> Categorias ▾ </NavLink>
 
                     </li>
 
                     <li className="ul__list--desk list--desk">
 
-                        <span className="list__span--desk"> Nosotros </span>
+                        <NavLink to={'/us'} className="list__span--desk"> Nosotros </NavLink>
 
                     </li>
 
                     <li className="ul__list--desk list--desk">
 
-                        <span className="list__span--desk"> Ingresa </span>
+                        <NavLink to={'/sign'} className="list__span--desk"> Ingresa </NavLink>
                         
                     </li>
 
@@ -146,12 +148,11 @@ export const NavBar = () => {
 
             </nav>
 
-            <div className="header__logo"> 
+            <NavLink to={'/'} className="header__logo"> 
+            
+                <LogoGR />
 
-                <i className="header__logo--i fa-solid fa-gun"></i>
-                <h1 className="header__logo--h1" data-text="GunsGR"> GunsGR </h1>
-
-            </div>
+            </NavLink>
 
         </header>
 
