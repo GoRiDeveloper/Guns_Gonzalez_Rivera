@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import './Slideshow.css';
 
 export const Slideshow = ({ children }) => {

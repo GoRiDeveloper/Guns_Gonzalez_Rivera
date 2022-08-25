@@ -10,7 +10,7 @@ export const ItemDetail = ({ item }) => {
 
             <div className="itemDetail__img">
 
-                <img className="itemDetail__img--img" src={item.img} alt="itemdetail-img"/>
+                <img className="itemDetail__img--img" src={item.img || '/images/default-img.png'} alt="itemdetail-img"/>
 
             </div>
 

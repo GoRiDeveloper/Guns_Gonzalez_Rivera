@@ -49,7 +49,7 @@ export const NavBar = () => {
         
         }
 
-    }, []);
+    }, [d]);
 
     return (
         
@@ -136,7 +136,11 @@ export const NavBar = () => {
 
                         subNavBarMenuItems.map((item, index) => (
 
-                            <li key={index} className="ul__ul--li--desk"> {item} </li>                          
+                            <li key={index} className="ul__ul--li--desk"> 
+                            
+                                <NavLink to={`/categories/${item}`}> {item} </NavLink> 
+                            
+                            </li>       
 
                         ))
 

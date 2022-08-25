@@ -20,8 +20,6 @@ export const Loader = () => {
             <span className="loader--span"></span>
             <span className="loader--span"></span>
             <span className="loader--span"></span>
-            <span className="loader--span"></span>
-            <span className="loader--span"></span>
 
         </div>
 

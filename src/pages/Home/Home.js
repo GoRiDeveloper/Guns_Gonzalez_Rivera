@@ -1,10 +1,7 @@
 import React from "react";
 import { Slideshow } from "../../components/Slideshow/Slideshow";
 import { ItemPrevListContainer } from '../../components/ItemPrevListContainer/ItemPrevListContainer';
-import Img1 from '../../images/Fondo-Accesorio-Glock.png';
-import Img2 from '../../images/Fondo-Glock.png';
-import Img3 from '../../images/Fondo-Rifle.png';
-import Img4 from '../../images/Fondo-Municion.png';
+import { Link } from 'react-router-dom';
 import './Home.css';
 
 export const Home = () => {
@@ -17,27 +14,11 @@ export const Home = () => {
 
                 <div className="secSlide__show--slide slide">
 
-                    <a>
+                    <Link to={"/product/3"}>
 
-                        <img className="slide__a--img" src={Img1} alt="pre-acc-glock"/>
+                        <img className="slide__a--img" src={'/images/Fondo-Accesorio-Glock.png'} alt="pre-acc-glock"/>
 
-                    </a>
-
-                    <div className="slide__text">
-
-                        <p> ¡Ofertas! </p>
-
-                    </div>
-
-                </div>
-
-                <div className="secSlide__show--slide slide">
-
-                    <a>
-
-                        <img className="slide__a--img" src={Img2} alt="pre-glock"/>
-
-                    </a>
+                    </Link>
 
                     <div className="slide__text">
 
@@ -49,11 +30,11 @@ export const Home = () => {
 
                 <div className="secSlide__show--slide slide">
 
-                    <a>
+                    <Link to={"/product/1"}>
 
-                        <img className="slide__a--img" src={Img3} alt="pre-rifle"/>
+                        <img className="slide__a--img" src={'/images/Fondo-Glock.png'} alt="pre-glock"/>
 
-                    </a>
+                    </Link>
 
                     <div className="slide__text">
 
@@ -65,11 +46,27 @@ export const Home = () => {
 
                 <div className="secSlide__show--slide slide">
 
-                    <a>
+                    <Link to={"/product/4"}>
 
-                        <img className="slide__a--img" src={Img4} alt="pre-munition"/>
+                        <img className="slide__a--img" src={'/images/Fondo-Rifle.png'} alt="pre-rifle"/>
 
-                    </a>
+                    </Link>
+
+                    <div className="slide__text">
+
+                        <p> ¡Ofertas! </p>
+
+                    </div>
+
+                </div>
+
+                <div className="secSlide__show--slide slide">
+
+                    <Link to={"/product/2"}>
+
+                        <img className="slide__a--img" src={'/images/Fondo-Municion.png'} alt="pre-munition"/>
+
+                    </Link>
 
                     <div className="slide__text">
 

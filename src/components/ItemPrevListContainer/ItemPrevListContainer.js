@@ -2,14 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { ItemList } from '../ItemList/ItemList';
 import { Item } from '../ItemList/Item/Item';
 import { Loader } from '../Loader/Loader';
-import Png1 from '../../images/Accesorio-Glock.png';
-import Png2 from '../../images/Glock.png';
-import Png3 from '../../images/Rifle.png';
-import Png4 from '../../images/Municion.png';
-import Png5 from '../../images/pistol/CZp-10m.png';
-import Png6 from '../../images/pistol/revolver610.png';
-import Png7 from '../../images/pistol/thomson1911.png';
-import Png8 from '../../images/pistol/glock19-4punto5.png';
 
 export const ItemPrevListContainer = () => {
 
@@ -20,19 +12,19 @@ export const ItemPrevListContainer = () => {
 
         const dataBestSellers = [
 
-            {id: 1, name: "Glock-32", price: 1800, img: Png2},
-            {id: 2, name: "Munición .30", price: 300,img: Png4},
-            {id: 3, name: "Cargador 9mm", price: 100, img: Png1},
-            {id: 4, name: "Rifle .300 Win", price: 4000, img: Png3}
+            {id: 1, name: "Glock-32", category: "Arma Corta", stock: 10, price: 1800, img: '/images/Glock.png'},
+            {id: 2, name: "Munición .30", category: "Municiones", stock: 6, price: 300,img: '/images/Municion.png'},
+            {id: 3, name: "Cargador 9mm", category: "Accesorios", stock: 20, price: 100, img: '/images/Accesorio-Glock.png'},
+            {id: 4, name: "Rifle .300 Win", category: "Arma Larga", stock: 4, price: 4000, img: '/images/Rifle.png'}
     
         ];
 
         const dataNewProducts = [
 
-            {id: 5, name: "CZp-10m", price: 1000, img: Png5},
-            {id: 6, name: "Revolver 610", price: 882, img: Png6},
-            {id: 7, name: "Thompson 1911", price: 550, img: Png7},
-            {id: 8, name: "Glock 19", price: 1500, img: Png8}
+            {id: 5, name: "CZp-10m", category: "Arma Corta", stock: 14, price: 1000, img: '/images/pistol/CZp-10m.png'},
+            {id: 6, name: "Revolver 610", category: "Arma Corta", stock: 3, price: 882, img: '/images/pistol/revolver610.png'},
+            {id: 7, name: "Thompson 1911", category: "Arma Corta", stock: 8, price: 550, img: '/images/pistol/thomson1911.png'},
+            {id: 8, name: "Glock 19", category: "Arma Corta", stock: 18, price: 1500, img: '/images/pistol/glock19-4punto5.png'}
 
         ];
 
@@ -87,7 +79,7 @@ export const ItemPrevListContainer = () => {
                     {prodA.length < 1 
                         ? (<Loader />)
                         : (
-                            prodA.map((item, index) => <Item key={item.id * index * 2} item={item} index={item.id}/>)
+                            prodA.map((item, index) => <Item key={item.id * index * 2} item={item}/>)
                         )
                     }
 
@@ -108,7 +100,7 @@ export const ItemPrevListContainer = () => {
                     {prodB.length < 1 
                         ? (<Loader />)
                         : (
-                            prodB.map((item, index) => <Item key={item.id + index} item={item} index={item.id}/>)
+                            prodB.map((item, index) => <Item key={item.id + index} item={item}/>)
                         )
                     }
 

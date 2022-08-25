@@ -19,11 +19,12 @@ export const Index = () => {
             <Routes>
 
                 <Route path="/" element={<Home />} />
-                <Route path="/categories" element={<Categories />} />
+                <Route path="/categories" element={<Categories />}/>
+                <Route path="/categories/:category" element={<Categories />} />
                 <Route path="/us" element={<Us />} />
                 <Route path="/sign" element={<Sign />} />
                 <Route path="/cart" element={<Cart />} />
-                <Route path="/product/:index" element={<Product />} />
+                <Route path="/product/:id" element={<Product />} />
                 
             </Routes>       
             <Footer />
@@ -32,4 +33,4 @@ export const Index = () => {
 
     );
 
-}
+};
