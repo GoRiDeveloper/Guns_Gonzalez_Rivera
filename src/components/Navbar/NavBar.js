@@ -49,6 +49,8 @@ export const NavBar = () => {
         
         }
 
+        return {};
+
     }, [d]);
 
     return (

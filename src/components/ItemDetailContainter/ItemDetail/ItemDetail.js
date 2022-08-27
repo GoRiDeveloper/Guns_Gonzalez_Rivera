@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { ItemCount } from '../../ItemCount/ItemCount';
 import './ItemDetail.css';
 
@@ -24,7 +25,7 @@ export const ItemDetail = ({ item }) => {
                     <label className="details__content--count"> Cantidad : </label>
                     <ItemCount stock={item.stock} initial={1}/>
                     <label className="details__content--stock"> Stock : {item.stock} </label>
-                    <button className="details__content--button"> ¡Añadir al Carrito! </button>
+                    <Link to={"/cart"} className="details__content--button"> ¡Añadir al Carrito! </Link>
 
                 </div>
 
