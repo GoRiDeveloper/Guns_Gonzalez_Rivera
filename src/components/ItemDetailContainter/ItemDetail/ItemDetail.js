@@ -1,9 +1,17 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+//import { CartContext } from '../../../context/CartContext';
 import { ItemCount } from '../../ItemCount/ItemCount';
 import './ItemDetail.css';
 
 export const ItemDetail = ({ item }) => {
+
+    //const { addToCart } = useContext(CartContext);
+
+    const onAdd = (counter) => {
+
+        console.log("este es tu carrito :", counter);
+
+    };
 
     return (
 
@@ -23,9 +31,8 @@ export const ItemDetail = ({ item }) => {
                     <p className="details__content--p"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim debitis corporis explicabo similique maiores illo qui consequuntur provident molestiae sunt ea soluta, quod nesciunt voluptate libero ipsa esse autem nihil. </p>
                     <h3 className="details__content--price"> $ {item.price} </h3>
                     <label className="details__content--count"> Cantidad : </label>
-                    <ItemCount stock={item.stock} initial={1}/>
+                    <ItemCount stock={item.stock} initial={1} onAdd={onAdd}/>
                     <label className="details__content--stock"> Stock : {item.stock} </label>
-                    <Link to={"/cart"} className="details__content--button"> ¡Añadir al Carrito! </Link>
 
                 </div>
 
