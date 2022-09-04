@@ -3,7 +3,9 @@ import { CartContext } from '../../context/CartContext';
 
 export const Cart = () => {
 
-    const { alerta } = useContext(CartContext);
+    const { cart, clear } = useContext(CartContext);
+
+    console.log(cart);
 
     return (
 
@@ -15,13 +17,14 @@ export const Cart = () => {
 
                 <article className="cart__article">
 
-                    <a><img/></a>
+                    <a><img alt="img-product"/></a>
 
                     <div>
 
                         <h3></h3>
                         <h4></h4>
                         <p></p>
+                        <button onClick={() => clear()}>vaciar</button>
 
                     </div>
 
