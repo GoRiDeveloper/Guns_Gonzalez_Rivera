@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+/*import { collection, getDocs } from 'firebase/firestore';
+import { db } from '../../services/index';*/
 import { ItemList } from '../ItemList/ItemList';
 import { Item } from '../ItemList/Item/Item';
 import { Loader } from '../Loader/Loader';
@@ -9,6 +11,25 @@ export const ItemPrevListContainer = () => {
     [prodB, setProdB] = useState([]);
 
     useEffect(() => {
+
+        /*const getColData = async () => {
+
+            try {
+    
+                const data = collection(db, "products");
+                const col = await getDocs(data);
+                const res = col.docs.map(doc => doc={ id:doc.id, ...doc.data() });
+                console.log(res);
+
+            } catch (err) {
+                
+                console.log(err);
+
+            }
+
+        };
+
+        getColData();*/
 
         const dataBestSellers = [
 
@@ -41,7 +62,7 @@ export const ItemPrevListContainer = () => {
         taskA
             .then(res => setProdA(res))
             .catch(err => console.log(err))
-            .finally(() => console.log("Se finalizo la promesa."));
+            .finally();
 
         const taskB = new Promise ((resolve, rejected) => {
 
@@ -56,7 +77,7 @@ export const ItemPrevListContainer = () => {
         taskB
             .then(res => setProdB(res))
             .catch(err => console.log(err))
-            .finally(() => console.log("Se finalizo la promesa."));
+            .finally();
 
         return () => {};
 

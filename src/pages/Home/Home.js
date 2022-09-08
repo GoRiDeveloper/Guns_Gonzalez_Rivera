@@ -1,10 +1,31 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Slideshow } from "../../components/Slideshow/Slideshow";
 import { ItemPrevListContainer } from '../../components/ItemPrevListContainer/ItemPrevListContainer';
 import { Link } from 'react-router-dom';
+import { CartContext } from "../../context/CartContext";
 import './Home.css';
 
 export const Home = () => {
+
+    let homeShow = {
+
+        categories: false,
+        us: false,
+        sign: false,
+        cart: false,
+        noList: true
+
+    };
+
+    const { cartActive } = useContext(CartContext);
+
+    const navRespItem = (element) => {
+
+        cartActive(element);
+
+    };
+
+    navRespItem(homeShow);
 
     return (
 

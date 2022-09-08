@@ -83,6 +83,15 @@
 
 }
 
+.list__a--unit {
+
+    position: absolute;
+    font-size: 1rem;
+    transform: translateY(25px);
+    z-index: 4;
+
+}
+
 .list.active .list__a .list__a--text {
 
     transform: translateY(-4px);
@@ -102,6 +111,12 @@
     border-radius: 50%;
     transition: .5s;
     z-index: 1;
+
+}
+
+.none {
+
+    display: none;
 
 }
 
@@ -224,7 +239,11 @@
 
 .header__cart:hover,
 .i--logo:hover,
-.controls__button:hover {
+.controls__button:hover,
+.info__buttons--item:hover,
+.info__buttons--items:hover,
+.buttons__shop:hover,
+.buttons__clear:hover {
 
     color: #aa0000;
     transition: all 300ms ease;
@@ -444,7 +463,7 @@
 
     .ul__list--desk {
 
-        font-size: 1.3rem;
+        font-size: 1.1rem;
         cursor: pointer;
 
     }
@@ -486,6 +505,16 @@
     .header__logo {
 
         margin: .5rem 1rem .5rem;
+
+    }
+
+}
+
+@media screen and (min-width: 670px) {
+    
+    .ul__list--desk {
+
+        font-size: 1.35rem;
 
     }
 

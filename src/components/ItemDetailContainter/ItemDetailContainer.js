@@ -1,13 +1,33 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { ItemDetail } from './ItemDetail/ItemDetail';
 import { Loader } from '../Loader/Loader';
+import { CartContext } from '../../context/CartContext';
 
 export const ItemDetailContainer = () => {
 
-    const { id } = useParams(),
+    let detailShow = {
+
+        categories: false,
+        us: false,
+        sign: false,
+        cart: false,
+        noList: true
+
+    };
+
+    const { cartActive } = useContext(CartContext),
+    { id } = useParams(),
     newID = parseInt(id),
     [item, setItem] = useState({});
+
+    const navRespItem = (element) => {
+
+        cartActive(element);
+
+    };
+
+    navRespItem(detailShow);
 
     useEffect(() => {
 
