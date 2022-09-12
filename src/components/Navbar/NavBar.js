@@ -1,7 +1,5 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../../services/index';
 import { CartWidget, CartWidgetResp } from './CartWidget/CartWidget';
 import { LogoGR } from '../LogoGR/LogoGR';
 import './NavBar.css';
@@ -9,7 +7,7 @@ import './NavBar.css';
 export const NavBar = () => {
 
     const d = document,
-    [subNavBarMenuItems, setSubNavBarMenuItems] = useState([]);
+    subNavBarMenuItems = ["Accesorios", "Arma Corta", "Arma Larga", "Municiones"];
 
     const activeLink = (e) => {
 
@@ -37,29 +35,6 @@ export const NavBar = () => {
         });
 
     };
-
-    useEffect(() => {
-
-        const getColData = async () => {
-
-            try {
-                
-                const data = collection(db, "categories");
-                const col = await getDocs(data);
-                const res = col.docs.map(doc => doc={ id:doc.id, ...doc.data() });
-                setSubNavBarMenuItems(res);
-
-            } catch (err) {
-
-                console.log(err);
-
-            }
-
-        };
-
-        getColData();
-
-    }, [subNavBarMenuItems]);
 
     return (
         
@@ -144,11 +119,11 @@ export const NavBar = () => {
 
                     <ul className="ul__ul--desk">{
 
-                        subNavBarMenuItems.map((item) => (
+                        subNavBarMenuItems.map((categoria, index) => (
 
-                            <li key={item.key} className="ul__ul--li--desk"> 
+                            <li key={index + Math.random()} className="ul__ul--li--desk"> 
                             
-                                <NavLink to={`/categories/${item.category}`}> {item.category} </NavLink> 
+                                <NavLink to={`/categories/${categoria}`}> {categoria} </NavLink> 
                             
                             </li>       
 

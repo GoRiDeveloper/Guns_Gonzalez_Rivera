@@ -52,6 +52,7 @@ export const CartProvider = ({ children }) => {
         }
 
     }),
+    //[data, setData] = useState([]),
     d = document;
 
     useEffect(() => {
@@ -65,7 +66,7 @@ export const CartProvider = ({ children }) => {
     }, [cart, unit, total]); 
 
     const addToCart = (product) => {
-
+debugger
         const isInCart = cart.find(item => item.id === product.id);
 
         if (isInCart) {
@@ -176,63 +177,42 @@ export const CartProvider = ({ children }) => {
         listResp.forEach((item) => 
         item.classList.remove("active"))
 
-        dispNone 
-        
-            ? dispNone.classList.remove("none") 
-            : <></>
+        dispNone && dispNone.classList.remove("none")
 
         listResp 
 
-            ? element.categories 
-
-                ? d.querySelector(".list-categories").classList.add("active") 
-                : <></>
+            ? element.categories && d.querySelector(".list-categories").classList.add("active") 
 
             : <></>
 
         listResp 
 
-            ? element.us 
-
-                ? d.querySelector(".list-us").classList.add("active") 
-                : <></>  
+            ? element.us && d.querySelector(".list-us").classList.add("active")
 
             : <></>          
             
         listResp 
 
-            ? element.sign
-
-                ? d.querySelector(".list-sign").classList.add("active") 
-                : <></>
+            ? element.sign && d.querySelector(".list-sign").classList.add("active")
 
             : <></>  
 
         listResp 
 
-            ? element.cart
-
-                ? d.querySelector(".list-cart").classList.add("active") 
-                : <></>
+            ? element.cart && d.querySelector(".list-cart").classList.add("active")
 
             : <></>  
 
         listResp 
         
-            ? element.noList
-
-                ? listResp.forEach((item) => item.classList.remove("active"))
-                : <></>
+            ? element.noList && listResp.forEach((item) => item.classList.remove("active"))
 
             : <></>
             
 
         dispNone 
 
-            ? element.noList 
-
-                    ? dispNone.classList.add("none")
-                    : <></>
+            ? element.noList && dispNone.classList.add("none")
 
             : <></>
 

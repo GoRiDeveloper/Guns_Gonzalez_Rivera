@@ -166,16 +166,16 @@
     .info__title {
 
         width: 5.2rem;
-        font-size: 1rem;
+        font-size: .8rem;
         padding: 0 5px 0 0;
 
     }
 
     .info__quantity {
 
-        font-size: .9rem;
+        font-size: .8rem;
         text-align: center;
-        padding: 0 10px 0 0;
+        padding: 0 10px 0 5px;
 
     }
 
@@ -190,7 +190,7 @@
     .info__totalPrice {
 
         width: 3.1rem;
-        font-size: .9rem;
+        font-size: .8rem;
         padding: 0 5px 0 0;
 
     }
@@ -236,20 +236,20 @@
     .info__title {
 
         width: 8.5rem;
-        font-size: 1.5rem;
-        padding: 0 15px 0 0;
+        font-size: 1.2rem;
+        padding: 0 15px 0 10px;
 
     }
 
     .info__quantity {
 
-        padding: 0 15px 0 0;
+        padding: 0 15px 0 10px;
 
     }
 
     .info__price {
 
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         padding: 0 15px 0 0;
 
     }
@@ -276,7 +276,7 @@
 
     .info__buttons--item {
 
-        padding: 0 15px 0 0;
+        padding: 0 8px 0 0;
 
     }
 

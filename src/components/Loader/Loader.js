@@ -1,27 +1,42 @@
-import React from "react";
+import React, { useContext } from "react";
+import { GlobalContext } from '../../context/GlobalContext';
 import './Loader.css';
 
 export const Loader = () => {
 
+    const { loading } = useContext(GlobalContext);
+
     return (
 
-        <div className="loader">
+        <>
 
-            <span className="loader--span"></span>
-            <span className="loader--span"></span>
-            <span className="loader--span"></span>
-            <span className="loader--span"></span>
-            <span className="loader--span"></span>
-            <span className="loader--span"></span>
-            <span className="loader--span"></span>
-            <span className="loader--span"></span>
-            <span className="loader--span"></span>
-            <span className="loader--span"></span>
-            <span className="loader--span"></span>
-            <span className="loader--span"></span>
-            <span className="loader--span"></span>
+            {loading && (
 
-        </div>
+                <div className="container__loader">
+
+                    <div className="loader">
+
+                        <span className="loader--span"></span>
+                        <span className="loader--span"></span>
+                        <span className="loader--span"></span>
+                        <span className="loader--span"></span>
+                        <span className="loader--span"></span>
+                        <span className="loader--span"></span>
+                        <span className="loader--span"></span>
+                        <span className="loader--span"></span>
+                        <span className="loader--span"></span>
+                        <span className="loader--span"></span>
+                        <span className="loader--span"></span>
+                        <span className="loader--span"></span>
+                        <span className="loader--span"></span>
+
+                    </div>
+
+                </div>
+
+            )}
+
+        </>
 
     );
 
