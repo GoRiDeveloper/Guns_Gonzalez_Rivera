@@ -1,5 +1,6 @@
 import React from 'react';
 import { Loader } from '../Loader/Loader';
+import { Alerts } from '../Alerts/Alerts';
 
 export const Layout = ({ children }) => {
 
@@ -8,6 +9,7 @@ export const Layout = ({ children }) => {
         <>
         
             <Loader />
+            <Alerts />
 
             { children }
         

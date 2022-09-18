@@ -1,0 +1,74 @@
+.container__addAlert {
+
+    position: fixed;
+    margin: 10px 0 0 10px;
+    z-index: 21;
+
+}
+
+.addAlert {
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 80px;
+    background-color: #000;
+    border-radius: 10px;
+    box-shadow: 16px 14px 20px #0000008c;
+    overflow: hidden;
+
+}
+
+.addAlert::before {
+
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 450%;
+    background-image: conic-gradient(
+
+        #09ff00 30deg,
+        transparent 150deg
+
+    );
+    animation: rotate 1.2s linear infinite;
+
+}
+
+.addAlert::after {
+
+    content: "¡Agregado Al Carrito!";
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 240px;
+    height: 70px;
+    background-color: #007009;
+    color: #fff;
+    font-size: medium;
+    font-family: var(--tipo-title);
+    letter-spacing: 1px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: inset 20px 20px 20px #0000008c;
+
+}
+
+@keyframes rotate {
+
+    0% {
+
+        transform: rotate(0deg);
+
+    }
+
+    100% {
+
+        transform: rotate(-360deg);
+
+    }
+
+}

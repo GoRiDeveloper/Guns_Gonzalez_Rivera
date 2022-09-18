@@ -3,7 +3,6 @@ import { db } from '../../services/index';
 import { getDoc, doc } from 'firebase/firestore';
 import { useParams } from 'react-router-dom';
 import { ItemDetail } from './ItemDetail/ItemDetail';
-import { CartContext } from '../../context/CartContext';
 import { GlobalContext } from '../../context/GlobalContext';
 
 export const ItemDetailContainer = () => {
@@ -18,8 +17,7 @@ export const ItemDetailContainer = () => {
 
     };
 
-    const {setLoading} = useContext(GlobalContext),
-    {cartActive} = useContext(CartContext),
+    const { setLoading, cartActive } = useContext(GlobalContext),
     [prod, setProd] = useState({}),
     { id } = useParams();
 

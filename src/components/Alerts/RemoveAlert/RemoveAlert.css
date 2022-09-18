@@ -1,0 +1,74 @@
+.container__removeAlert {
+
+    position: fixed;
+    margin: 10px 0 0 10px;
+    z-index: 21;
+
+}
+
+.removeAlert {
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 80px;
+    background-color: #000;
+    border-radius: 10px;
+    box-shadow: 16px 14px 20px #0000008c;
+    overflow: hidden;
+
+}
+
+.removeAlert::before {
+
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 450%;
+    background-image: conic-gradient(
+
+        #aa0000 30deg,
+        transparent 150deg
+
+    );
+    animation: rotate 1.2s linear infinite;
+
+}
+
+.removeAlert::after {
+
+    content: "¡Eliminado Del Carrito!";
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 240px;
+    height: 70px;
+    background-color: #690a0a;
+    color: #fff;
+    font-size: medium;
+    font-family: var(--tipo-title);
+    letter-spacing: 1px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: inset 20px 20px 20px #0000008c;
+
+}
+
+@keyframes rotate {
+
+    0% {
+
+        transform: rotate(0deg);
+
+    }
+
+    100% {
+
+        transform: rotate(-360deg);
+
+    }
+
+}

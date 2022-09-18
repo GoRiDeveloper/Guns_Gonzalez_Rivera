@@ -5,7 +5,6 @@ import { ItemList } from '../ItemList/ItemList';
 import { Item } from '../ItemList/Item/Item';
 import { GlobalContext } from '../../context/GlobalContext';
 
-
 export const ItemPrevListContainer = () => {
 
     const [prodA, setProdA] = useState([]),
@@ -54,10 +53,19 @@ export const ItemPrevListContainer = () => {
     
         };
 
-        getDataA();
-        getDataB();
+        if (prodA.length === 0) {
 
-    }, []);
+            getDataA();
+
+        }
+
+        if (prodB.length === 0) {
+
+            getDataB();
+            
+        }
+
+    }, [prodA, prodB, setLoading, setProdA, setProdB]);
 
     return (
         

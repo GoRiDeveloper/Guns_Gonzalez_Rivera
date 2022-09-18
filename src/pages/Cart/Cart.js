@@ -1,7 +1,8 @@
-import React, { useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import { Link } from 'react-router-dom';
 import { LogoGR } from '../../components/LogoGR/LogoGR';
 import { CartItem } from './CartItem/CartItem';
+import { GlobalContext } from '../../context/GlobalContext';
 import { CartContext } from '../../context/CartContext';
 import './Cart.css';
 
@@ -17,8 +18,8 @@ export const Cart = () => {
 
     };
     
-    const { cart, unit, total, removeItem, removeAllItem, clear, cartActive } = useContext(CartContext);
-    //console.log(cart);
+    const { cart, unit, total, removeItem, removeAllItem, clear, totalAmount, totalUnit } = useContext(CartContext),
+    { cartActive } = useContext(GlobalContext);
 
     const navRespItem = (element) => {
 
@@ -27,6 +28,17 @@ export const Cart = () => {
     };
 
     navRespItem(cartShow);
+
+    useEffect(() => {
+
+        if (cart) {
+
+            totalAmount();
+            totalUnit();
+
+        }
+
+    }, [cart, unit, total, totalAmount, totalUnit]);
 
     return (
 

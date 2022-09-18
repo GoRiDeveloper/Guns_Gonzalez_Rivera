@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Slideshow } from "../../components/Slideshow/Slideshow";
 import { ItemPrevListContainer } from '../../components/ItemPrevListContainer/ItemPrevListContainer';
 import { Link } from 'react-router-dom';
-import { CartContext } from "../../context/CartContext";
+import { GlobalContext } from "../../context/GlobalContext";
 import './Home.css';
 
 export const Home = () => {
@@ -17,7 +17,7 @@ export const Home = () => {
 
     };
 
-    const { cartActive } = useContext(CartContext);
+    const { cartActive } = useContext(GlobalContext);
 
     const navRespItem = (element) => {
 
@@ -35,7 +35,7 @@ export const Home = () => {
 
                 <div className="secSlide__show--slide slide">
 
-                    <Link to={"/product/3"}>
+                    <Link to={"/product/wi0g5Lkd2p9MWMKod7rR"}>
 
                         <img className="slide__a--img" src={'/images/Fondo-Accesorio-Glock.png'} alt="pre-acc-glock"/>
 
@@ -51,7 +51,7 @@ export const Home = () => {
 
                 <div className="secSlide__show--slide slide">
 
-                    <Link to={"/product/1"}>
+                    <Link to={"/product/WVHNEBMZ40MbBt0JVvhi"}>
 
                         <img className="slide__a--img" src={'/images/Fondo-Glock.png'} alt="pre-glock"/>
 
@@ -67,7 +67,7 @@ export const Home = () => {
 
                 <div className="secSlide__show--slide slide">
 
-                    <Link to={"/product/4"}>
+                    <Link to={"/product/zeoiQllLbGAMwZfYqnJk"}>
 
                         <img className="slide__a--img" src={'/images/Fondo-Rifle.png'} alt="pre-rifle"/>
 
@@ -83,7 +83,7 @@ export const Home = () => {
 
                 <div className="secSlide__show--slide slide">
 
-                    <Link to={"/product/2"}>
+                    <Link to={"/product/VohU1n7nWJDeocwx7pBC"}>
 
                         <img className="slide__a--img" src={'/images/Fondo-Municion.png'} alt="pre-munition"/>
 

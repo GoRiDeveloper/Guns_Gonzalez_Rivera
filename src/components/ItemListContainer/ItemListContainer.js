@@ -31,11 +31,15 @@ export const ItemListContainer = ({ categ }) => {
     
         };
 
-        getProdsData();
+        if (data.length === 0) {
+
+            getProdsData();
+
+        }
 
         return () => {}
 
-    }, []);
+    }, [data, setLoading, setData]);
 
     const productsFiltered = categ
 

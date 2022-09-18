@@ -11,14 +11,7 @@ export const ItemDetail = ({ item }) => {
 
     const onAdd = (counter) => {
 
-        let saleItem = {
-
-            ...item,
-            quantity: counter
-
-        };
-
-        addToCart(saleItem);
+        addToCart(item, counter);
 
     };
 

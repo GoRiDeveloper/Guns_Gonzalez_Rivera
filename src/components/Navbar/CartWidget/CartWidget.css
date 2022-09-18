@@ -22,7 +22,7 @@
     .header__cart span {
 
         font-size: 1.2rem;
-        padding-left: .5rem;
+        padding-left: 0;
 
     }
     
@@ -33,6 +33,12 @@
     .header__cart {
 
         flex-direction: row;
+
+    }
+
+    .header__cart span {
+
+        padding-left: .5rem;
 
     }
 
