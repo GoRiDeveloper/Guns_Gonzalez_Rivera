@@ -1,0 +1,69 @@
+.main__us {
+
+    grid-area: content-0;
+
+}
+
+.section__us {
+
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    margin: 3.5rem 0;
+
+}
+
+.title__us,
+.subtitle__help,
+.subtitle__contact,
+.subtitle__legal,
+.subtitle__privacy {
+
+    font-size: 2.8rem;
+    font-family: var(--tipo-title);
+    text-align: center;
+    margin-bottom: 2.5rem;
+
+}
+
+.container__us,
+.container__help,
+.container__contact,
+.container__legal,
+.container__privacy {
+
+    width: 70%;
+    max-height: 300px;
+    background-color: #9b2626;
+    border: 2px solid rgb(73, 1, 1);
+    box-shadow: 20px 20px 20px #000;
+    overflow-y: auto;
+    margin-bottom: 5rem;
+
+}
+
+.container__us p,
+.container__help p,
+.container__contact p,
+.container__legal p,
+.container__privacy p  {
+
+    font-size: 1.1rem;
+    padding: 20px;
+
+}
+
+@media screen and (max-width: 324px) {
+    
+    .title__us,
+    .subtitle__help,
+    .subtitle__contact,
+    .subtitle__legal,
+    .subtitle__privacy {
+
+        font-size: 2rem;
+
+    }
+
+}

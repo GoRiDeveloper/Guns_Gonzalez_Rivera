@@ -22,7 +22,7 @@ export const Alerts = () => {
 
                 setAddAlert(false);
 
-            }, 4500);
+            }, 5000);
 
         };
         
@@ -32,7 +32,7 @@ export const Alerts = () => {
 
                 setRemoveAlert(false);
 
-            }, 4500);
+            }, 5000);
 
         };
 

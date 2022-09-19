@@ -34,25 +34,25 @@ export const ItemDetailContainer = () => {
         const getProdData = async ({ id }) => {
 
             setLoading(true);
-            try {
-                
+            try {      
                 const data = doc(db, "products", id);
                 const prod = await getDoc(data);
                 let res = prod.data(); 
                 setProd({ id: prod.id, ...res });
                 setLoading(false);
-    
-            } catch (err) {
-                
+            } catch (err) {         
                 console.log(err);
-    
             }
     
         };
 
-        getProdData({id});
+        if (Object.keys(prod).length === 0) {
 
-    }, []);
+            getProdData({id});
+
+        }
+
+    }, [id, setLoading, prod]);
 
     return (
 

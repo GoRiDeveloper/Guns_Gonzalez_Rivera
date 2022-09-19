@@ -16,17 +16,13 @@ export const ItemListContainer = ({ categ }) => {
 
             setLoading(true);
             try {
-    
                 const prods = collection(db, "products");
                 const col = await getDocs(prods);
                 const res = col.docs.map(doc => doc = { id:doc.id, ...doc.data() });
                 setData(res);
                 setLoading(false);
-    
             } catch (err) { 
-    
                 console.log(err); 
-    
             }
     
         };

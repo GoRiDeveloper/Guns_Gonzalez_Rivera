@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { ItemListContainer } from '../../components/ItemListContainer/ItemListContainer';
 import { useParams } from 'react-router-dom';
+import { ItemListContainer } from '../../components/ItemListContainer/ItemListContainer';
 import { GlobalContext } from '../../context/GlobalContext';
 
 export const Categories = () => {

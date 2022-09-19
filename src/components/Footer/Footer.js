@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { LogoGR } from '../LogoGR/LogoGR';
 import './Footer.css';
 
@@ -13,10 +13,10 @@ export const Footer = () => {
 
                 <ul className="links__ul">
 
-                    <li className="links__ul--li"> Ayuda </li>
-                    <li className="links__ul--li"> Contactanos </li>
-                    <li className="links__ul--li"> Condiciones Legales </li>
-                    <li className="links__ul--li"> Privacidad y Avisos de Usos </li>
+                    <Link to={"/us"} className="links__ul--li"> Ayuda </Link>
+                    <Link to={"/us"} href="#contact" className="links__ul--li"> Contactanos </Link>
+                    <Link to={"/us"} className="links__ul--li"> Condiciones Legales </Link>
+                    <Link to={"/us"} className="links__ul--li"> Privacidad y Avisos de Usos </Link>
 
                 </ul>
 

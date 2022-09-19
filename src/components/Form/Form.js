@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { db } from '../../services/index';
 import { collection, doc, addDoc, getDoc, updateDoc } from 'firebase/firestore';
+import { Input } from './Input/Input';
 import { GlobalContext } from '../../context/GlobalContext';
 import './Form.css';
 
@@ -23,14 +24,13 @@ export const Form = ({ purchase, purchaseUnit, purchaseTotal, clear, handleSignI
     { buyer: { email, name, telephone }, } = form, 
     {setLoading, setBuyAlert} = useContext(GlobalContext);
 
-    const infoStock = async ({ id, quantity }) => {
+    const updateStock = async ({ id, quantity }) => {
 
         setLoading(true);
         const info = doc(db, "products", id);
         try {
             const res = await getDoc(info);
             let result = res.data();
-            console.log(result);
             await updateDoc(info, {stock: result.stock - quantity});
             setLoading(false);
         } catch (err) {
@@ -54,31 +54,15 @@ export const Form = ({ purchase, purchaseUnit, purchaseTotal, clear, handleSignI
     const checkoutStock = ({ data }) => {
 
         purchase.forEach(element => {
-            infoStock({ id: element.id, quantity: element.quantity });
+            updateStock({ id: element.id, quantity: element.quantity });
         });
         checkoutInfo({ data });
 
     };
 
-    const handleSubmit = (e) => {
+    const requiredData = (fields) => {
 
-        e.preventDefault();
-
-        const requiredData = (fields) => {
-
-            return fields.some(field => field === "");
-
-        };
-
-        if (requiredData([email, name, telephone])) {
-
-            alert("No se rellenaron campos del Formulario. :(");
-            return;
-
-        };
-
-        checkoutStock({ data: form });
-        clear();
+        return fields.some(field => field === "");
 
     };
 
@@ -93,6 +77,22 @@ export const Form = ({ purchase, purchaseUnit, purchaseTotal, clear, handleSignI
                 [name]: value,
             },
         });
+
+    };
+
+    const handleSubmit = (e) => {
+
+        e.preventDefault();
+
+        if (requiredData([email, name, telephone])) {
+
+            alert("No se rellenaron campos del Formulario. :(");
+            return;
+
+        };
+
+        checkoutStock({ data: form });
+        clear();
 
     };
 
@@ -161,9 +161,11 @@ export const Form = ({ purchase, purchaseUnit, purchaseTotal, clear, handleSignI
                         <form onSubmit={handleSubmit}>
 
                             <h4> Generar Ticket </h4>
-                            <input type="text" name="name" value={name} onChange={handleChange} placeholder="Ingresa tu Nombre :" required/>
-                            <input type="email" name="email" value={email} onChange={handleChange} placeholder="Ingresa tu E-Mail :" required/>
-                            <input type="tel" name="telephone" value={telephone} onChange={handleChange} placeholder="Ingresa tu Número :" required/>
+                            { Object.keys(form.buyer).map((key, index) => (
+
+                                <Input key={index} type={(key.toString() === "name" && "text") || (key.toString() === "email" && "email") || (key.toString() === "telephone" && "tel")} name={`${key}`} value={key.value} onChange={handleChange} placeholder={(key.toString() === "name" && "Ingresa Tu Nombre :") || (key.toString() === "email" && "Ingresa Tu E-mail :") || (key.toString() === "telephone" && "Ingresa Tu Teléfono :")}/>
+
+                            ))} 
                             <input type="submit" value="Registrarse"/>
 
                         </form>
