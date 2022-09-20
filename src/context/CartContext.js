@@ -35,7 +35,7 @@ export const CartProvider = ({ children }) => {
             return 0;
         }
     }),
-    { setAddAlert, setRemoveAlert } = useContext(GlobalContext);
+    { setAddAlert, setRemoveAlert, setStockAlert } = useContext(GlobalContext);
 
     useEffect(() => {
 
@@ -52,10 +52,19 @@ export const CartProvider = ({ children }) => {
         let newCart;
         const isInCart = cart.find(element => element.id === product.id);
         if (isInCart) {
-debugger
-            isInCart.quantity += quantity;
-            isInCart.stock -= quantity;
-            newCart = [...cart]
+
+            if (isInCart.stock >= quantity) {
+
+                isInCart.quantity += quantity;
+                isInCart.stock -= quantity;
+                newCart = [...cart]
+
+            } else {
+
+                setStockAlert(true);
+                return newCart = [...cart];
+
+            }
 
         } else {
 

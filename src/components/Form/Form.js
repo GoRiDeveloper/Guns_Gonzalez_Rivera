@@ -22,7 +22,7 @@ export const Form = ({ purchase, purchaseUnit, purchaseTotal, clear, handleSignI
 
     }),
     { buyer: { email, name, telephone }, } = form, 
-    {setLoading, setBuyAlert} = useContext(GlobalContext);
+    {setLoading, setBuyAlert, setOrder} = useContext(GlobalContext);
 
     const updateStock = async ({ id, quantity }) => {
 
@@ -43,7 +43,8 @@ export const Form = ({ purchase, purchaseUnit, purchaseTotal, clear, handleSignI
 
         try {
             const col = collection(db, "orders");
-            await addDoc(col, data);
+            const order = await addDoc(col, data);
+            setOrder(order.id);
             setBuyAlert(true);
         } catch (err) {
             console.log(err);

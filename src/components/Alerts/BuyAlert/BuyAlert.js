@@ -1,8 +1,10 @@
 import React from 'react';
 import './BuyAlert.css';
 
-export const BuyAlert = ({ handleBuyAlert }) => {
+export const BuyAlert = ({ handleBuyAlert, order }) => {
 
+    console.log(order);
+    
     return (
 
         <article className="container__buyAlert">
@@ -21,6 +23,7 @@ export const BuyAlert = ({ handleBuyAlert }) => {
 
                     <h4> ¡Gracias Por Tu Compra! </h4>
                     <h5> Tus Productos Se Te Enviaran Muy Pronto... </h5>
+                    <h5> Aquí esta tu ID de Compra : {order} </h5>
 
                 </div>
 

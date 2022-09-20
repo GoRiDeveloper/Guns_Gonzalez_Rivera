@@ -8,6 +8,8 @@ export const GlobalProvider = ({ children }) => {
     [addAlert, setAddAlert] = useState(false),
     [removeAlert, setRemoveAlert] = useState(false),
     [buyAlert, setBuyAlert] = useState(false),
+    [stockAlert, setStockAlert] = useState(false),
+    [order, setOrder] = useState(),
     d = document;
 
     const cartActive = (element) => {
@@ -15,41 +17,42 @@ export const GlobalProvider = ({ children }) => {
         const listResp = d.querySelectorAll(".ul__list--resp"),
               dispNone = d.querySelector(".indicator");
 
-        listResp.forEach((item) => 
-        item.classList.remove("active"))
+        const active = () => { 
 
-        dispNone && dispNone.classList.remove("none")
+            listResp.forEach((item) => 
+            item.classList.remove("active")); 
+
+        }
+
+        active();
+
+        dispNone && dispNone.classList.remove("none");
 
         listResp 
 
-            ? element.categories && d.querySelector(".list-categories").classList.add("active") 
+            ? element.categories 
+            
+                ? d.querySelector(".list-categories").classList.add("active")
+
+                : element.us 
+
+                    ? d.querySelector(".list-us").classList.add("active") 
+
+                    : element.sign 
+                    
+                        ? d.querySelector(".list-sign").classList.add("active")
+
+                        : element.cart 
+                        
+                            ? d.querySelector(".list-cart").classList.add("active")
+
+                            : element.noList 
+                            
+                                ? active() 
+
+                                :<></>
 
             : <></>
-
-        listResp 
-
-            ? element.us && d.querySelector(".list-us").classList.add("active")
-
-            : <></>          
-            
-        listResp 
-
-            ? element.sign && d.querySelector(".list-sign").classList.add("active")
-
-            : <></>  
-
-        listResp 
-
-            ? element.cart && d.querySelector(".list-cart").classList.add("active")
-
-            : <></>  
-
-        listResp 
-        
-            ? element.noList && listResp.forEach((item) => item.classList.remove("active"))
-
-            : <></>
-            
 
         dispNone 
 
@@ -67,10 +70,14 @@ export const GlobalProvider = ({ children }) => {
             addAlert,
             removeAlert,
             buyAlert,
+            stockAlert,
+            order,
             setLoading,
             setAddAlert,
             setRemoveAlert,
             setBuyAlert,
+            setStockAlert,
+            setOrder,
             cartActive
 
         }}>

@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Slideshow } from "../../components/Slideshow/Slideshow";
 import { ItemPrevListContainer } from '../../components/ItemPrevListContainer/ItemPrevListContainer';
 import { Link } from 'react-router-dom';
+import { FeatureList } from "../../components/FeatureList/FeatureList";
 import { GlobalContext } from "../../context/GlobalContext";
 import './Home.css';
 
@@ -98,6 +99,8 @@ export const Home = () => {
                 </div>
 
             </Slideshow>
+
+            <FeatureList />
 
             <ItemPrevListContainer />
 
